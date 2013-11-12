@@ -15,8 +15,10 @@
 
             navigator.camera.getPicture(
                 function (imageURI) {
-                    $img.attr('src', imageURI);
+                    alert(imageURI);
+                    // $img.attr('src', imageURI);
                     var fileName = "" + (new Date()).getTime() + ".jpg"; // consider a more reliable way to generate unique ids
+                    alert("upload: " + fileName);
                     s3Uploader.upload(imageURI, fileName)
                         .done(function () {
                             alert("S3 upload succeeded");
@@ -24,8 +26,10 @@
                         .fail(function () {
                             alert("S3 upload failed");
                         });
+                    alert("upload done");
                 },
                 function (message) {
+                    alert("whoops - " + message);
                     // We typically get here because the use canceled the photo operation. Fail silently.
                 }, options);
 
