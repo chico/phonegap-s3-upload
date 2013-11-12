@@ -25,8 +25,8 @@ var s3Uploader = (function () {
             "Content-Type": "image/jpeg"
         };
 
-        alert("uploading for real - " + imageURI + ", fileName: " + fileName);
-        ft.upload(imageURI, s3URI,
+        alert("uploading to test server - " + imageURI + ", fileName: " + fileName);
+        ft.upload(imageURI, "http://posttestserver.com/post.php?dir=babyletter",
             function (e) {
                 deferred.resolve(e);
             },
