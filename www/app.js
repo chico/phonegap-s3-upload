@@ -18,15 +18,13 @@
                     alert(imageURI);
                     // $img.attr('src', imageURI);
                     var fileName = "" + (new Date()).getTime() + ".jpg"; // consider a more reliable way to generate unique ids
-                    alert("upload: " + fileName);
                     s3Uploader.upload(imageURI, fileName)
                         .done(function () {
                             alert("S3 upload succeeded");
                         })
-                        .fail(function () {
-                            alert("S3 upload failed");
+                        .fail(function (e) {
+                            alert("S3 upload failed - " + e.code);
                         });
-                    alert("upload done");
                 },
                 function (message) {
                     alert("whoops - " + message);

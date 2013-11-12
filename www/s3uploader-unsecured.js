@@ -8,7 +8,6 @@ var s3Uploader = (function () {
 
     function upload(imageURI, fileName) {
 
-        alert("uploading - " + imageURI + ", fileName: " + fileName);
         var deferred = $.Deferred(),
             ft = new FileTransfer(),
             options = new FileUploadOptions();
@@ -35,7 +34,6 @@ var s3Uploader = (function () {
                 deferred.reject(e);
             }, options);
 
-        alert("returning promise");
         return deferred.promise();
 
     }
