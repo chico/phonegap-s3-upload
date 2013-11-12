@@ -1,9 +1,9 @@
 var s3Uploader = (function () {
 
-    var s3URI = encodeURI("https://YOUR_S3_BUCKET_NAME.s3.amazonaws.com/"),
-        policyBase64 = "YOUR_BASE64_ENCODED_POLICY_FILE",
-        signature = "YOUR_BASE64_ENCODED_SIGNATURE",
-        awsKey = 'YOUR_AWS_USER_KEY',
+    var s3URI = encodeURI("https://babyletter.s3.amazonaws.com/"),
+        policyBase64 = "eyJleHBpcmF0aW9uIjoiMjAyMC0xMi0zMVQxMjowMDowMC4wMDBaIiwiY29uZGl0aW9ucyI6W3siYnVja2V0IjoiYmFieWxldHRlciJ9LFsic3RhcnRzLXdpdGgiLCIka2V5IiwiIl0seyJhY2wiOiJwdWJsaWMtcmVhZCJ9LFsic3RhcnRzLXdpdGgiLCIkQ29udGVudC1UeXBlIiwiIl0sWyJjb250ZW50LWxlbmd0aC1yYW5nZSIsMCw1MjQyODgwMDBdXX0=",
+        signature = "abcYEMazNNOnlZRskObHT1hUY8o=",
+        awsKey = 'AKIAJQDCRNN2R7G5ZPVQ',
         acl = "public-read";
 
     function upload(imageURI, fileName) {
