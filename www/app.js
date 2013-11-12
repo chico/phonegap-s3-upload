@@ -31,7 +31,13 @@
                 function (message) {
                     alert("whoops - " + message);
                     // We typically get here because the use canceled the photo operation. Fail silently.
-                }, options);
+                },
+                {
+                    quality: 50,
+                    destinationType: navigator.camera.DestinationType.FILE_URI,
+                    sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+                }
+            );
 
             return false;
 
